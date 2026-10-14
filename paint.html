@@ -14,8 +14,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="shared/fonts.css">
 <link rel="stylesheet" href="shared/float.css">
-<link rel="stylesheet" href="shared/vendor/98css/98.css">
-<link rel="stylesheet" href="shared/win98.css">
+<link rel="stylesheet" href="shared/elementary/css/elementary.css">
 <script src="shared/i18n.js"></script>
 <script src="shared/float.js"></script>
 <script src="shared/exporters.js"></script>
@@ -42,25 +41,29 @@ body{display:flex;flex-direction:column}
 #app{flex:1;display:flex;overflow:hidden;min-height:0}
 
 /* Left toolbar */
-.toolbar{width:var(--sidebar-w);background:var(--c-panel);border-right:var(--bw-sm) solid var(--c-border);overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;padding:8px 0;gap:4px}
-.tool-group{display:flex;flex-direction:column;gap:4px;padding:6px;border-bottom:1px solid var(--c-border)}
+.toolbar{width:var(--sidebar-w);background:linear-gradient(180deg,#f2f1ee,#e3e2df);border-right:1px solid var(--c-border);overflow-y:auto;flex-shrink:0;display:flex;flex-direction:column;padding:4px 0;gap:2px;align-items:center}
+.tool-group{display:flex;flex-direction:column;gap:3px;padding:6px 0;border-bottom:1px solid var(--c-border);align-items:center;width:100%}
 .tool-group:last-child{border-bottom:none}
-.tool-group-label{font-family:var(--font-ui);font-size:9px;text-transform:uppercase;color:var(--c-muted);letter-spacing:1px;text-align:center;margin-bottom:4px}
+.tool-group-label{font-family:var(--font-ui);font-size:9px;text-transform:none;color:var(--c-muted);letter-spacing:0;text-align:center;margin-bottom:2px}
 .tool-btn{
-  width:42px;height:42px;background:var(--c-surface);border:var(--bw-sm) solid var(--c-border);
+  width:34px;height:34px;background:linear-gradient(180deg,#fff,#e5e5e5);border:1px solid var(--c-border-strong);border-top-color:#c8c8c8;
   cursor:pointer;display:grid;place-items:center;font-size:14px;color:var(--c-text);
-  transition:none;
-  box-shadow:2px 2px 0 var(--c-border);
+  transition:none;border-radius:6px;
+  box-shadow:inset 0 1px 0 0 #fff;
 }
-.tool-btn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--c-border)}
-.tool-btn:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--c-border)}
-.tool-btn.active{background:var(--c-primary);color:#fff}
+.tool-btn:hover{background:linear-gradient(180deg,#f0f8fe,#d8eefc);box-shadow:inset 0 1px 0 0 #fff}
+.tool-btn:active{box-shadow:inset 0 2px 4px rgba(0,0,0,.12);transform:translateY(1px)}
+.tool-btn.active{background:linear-gradient(180deg,#66c2f5,#47a8e9);color:#fff;border-color:var(--c-border-strong)}
 .tool-btn[disabled]{opacity:.4;cursor:not-allowed;pointer-events:none}
 
 /* Color swatches */
 .color-blocks{display:flex;gap:6px;justify-content:center;padding:6px}
-.color-block{width:22px;height:22px;border:var(--bw-sm) solid var(--c-border);cursor:pointer;position:relative;box-shadow:2px 2px 0 var(--c-border)}
-.color-block:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--c-border)}
+.color-block{width:20px;height:20px;border:1px solid var(--c-border-strong);cursor:pointer;position:relative;border-radius:2px}
+.color-block:hover{transform:translate(-1px,-1px)}
+.color-block.primary{}
+.color-block.secondary{transform:translate(-4px,4px)}
+.color-block.secondary:hover{transform:translate(-5px,3px)}
+.swap-btn{position:absolute;top:-6px;right:-6px;width:14px;height:14px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:50%;cursor:pointer;font-size:8px;display:grid;place-items:center}
 .color-block.primary{}
 .color-block.secondary{transform:translate(-4px,4px)}
 .color-block.secondary:hover{transform:translate(-5px,3px)}

@@ -86,7 +86,9 @@ float-suite/
 │   └── build/
 │       └── entitlements.mac.plist
 ├── shared/                 ← Shared runtime (loaded by all 5 pages)
-│   ├── float.css           ← Design tokens, HUD, modals, toasts
+│   ├── float.css           ← Design tokens (elementary-CSS based), HUD, modals, toasts
+│   ├── fonts.css           ← Open Sans, Inter, Space Mono, …
+│   ├── elementary/         ← Vendored elementary-CSS framework (css, font, img)
 │   ├── i18n.js             ← 8-language dictionary
 │   ├── float.js            ← HUD engine, theme, shortcuts, modal manager
 │   └── exporters.js        ← PDF / DOCX / ODT exporters (lazy-loaded)
